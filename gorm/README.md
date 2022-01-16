@@ -41,7 +41,7 @@ func main() {
 ```Go
 package main
 import (
-   	"gorm.io/gorm" 
+    "gorm.io/gorm" 
     "gorm.io/driver/mysql"
 )
 
@@ -53,6 +53,7 @@ func main() {
     // User Insert
     db.Create(&User)
 
+    var u User
     // User Select
     db.Where("id = ?", "smlee").First(&u)
 }
