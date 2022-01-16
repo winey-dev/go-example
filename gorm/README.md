@@ -1,4 +1,10 @@
 # gorm
+## gorm Install 방법 (Mysql)
+```bash
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/mysql
+```
+
 ## ORM 이란?   
 객체와 관계형 데이터베이스의 데이터를 자동으로 연결 해주는 것 
 
