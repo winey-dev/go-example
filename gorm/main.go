@@ -37,7 +37,7 @@ func main() {
 	var user User
 
 	// db.First(&userm "id = ?", "smlee") eqauls
-	result := db.Where("id = ?", "smlee").First(&user)
+	result = db.Where("id = ?", "smlee").First(&user)
 	if result.Error != nil {
 		log.Fatalf("db.Where.First failed .. err=%v\n", result.Error)
 	}
