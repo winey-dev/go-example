@@ -3,8 +3,6 @@ module k8s-some
 go 1.17
 
 require (
-	github.com/emicklei/go-restful/v3 v3.7.3
-	gopkg.in/igm/sockjs-go.v2 v2.1.0
 	k8s.io/api v0.23.3
 	k8s.io/client-go v0.23.3
 )
@@ -17,7 +15,6 @@ require (
 	github.com/google/go-cmp v0.5.5 // indirect
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/googleapis/gnostic v0.5.5 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/imdario/mergo v0.3.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/moby/spdystream v0.2.0 // indirect
