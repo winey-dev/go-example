@@ -23,7 +23,7 @@ func main() {
 	}
 	log.Printf("user : %v", user)
 
-	user.Password = "telco1234"
+	user.Password = "qwe582"
 
 	err = u.UserUpdate(user)
 	if err != nil {
