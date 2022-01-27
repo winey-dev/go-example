@@ -12,9 +12,9 @@ import (
 func main() {
 
 	exampleType := flag.String("type", "terminal", "--type=terminal or --type=log")
-	ns := flag.String("ns", "twems-310", "--ns=twems-310 (NameSpace)")
-	pn := flag.String("pn", "cnfems-em-config-57b6745d-j89fm", "--pn=cnfems-em-config-57b6745d-j89fm (PodName)")
-	cn := flag.String("cn", "", "--cn=cnfems-em-config-57b6745d-j89fm (ContainerName)")
+	ns := flag.String("ns", "nginx-ingress", "--ns=nginx-ingress (NameSpace)")
+	pn := flag.String("pn", "ingress-controller-57b6745d-j89fm", "--pn=ingress-controller-57b6745d-j89fm (PodName)")
+	cn := flag.String("cn", "", "--cn=ingress-controller (ContainerName)")
 	flag.Parse()
 
 	log.Printf("Flag Pasrse ExampleType=[%s] Namespace=[%s] PodName=[%s] ContainerName=[%s]\n",
