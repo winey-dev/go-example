@@ -4,13 +4,13 @@ import (
 	"log"
 
 	"github.com/yiaw/go-example/go-clean-arc/model"
-	"github.com/yiaw/go-example/go-clean-arc/repoimp"
+	"github.com/yiaw/go-example/go-clean-arc/repo"
 )
 
 func main() {
-	repoimp.InitDB()
-	repoInterface := repoimp.NewRepo()
-	u := model.NewUseCase(repoInterface)
+	repo.InitDB()
+	repoInterface := repo.NewRepo()
+	u := model.NewUser(repoInterface)
 
 	err := u.UserCreate(&model.User{Username: "smlee", Password: "smlee1234"})
 	if err != nil {

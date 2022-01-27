@@ -1,32 +1,79 @@
 package model
 
-type userusecase struct {
+import (
+	"fmt"
+)
+
+type User struct {
+	Username string
+	Password string
+}
+
+type user struct {
 	repo UserRepository
 }
 
-type UserUsecase interface {
+func Users() *user {
+	return &user{}
+}
+
+type UserRepository interface {
+	Create(u *User) error
+	Get(name string) (*User, error)
+	Update(u *User) error
+	Delete(name string) error
+}
+
+type UserInterface interface {
 	UserCreate(u *User) error
 	UserGet(name string) (*User, error)
 	UserUpdate(u *User) error
 	UserDelete(name string) error
 }
 
-func (u *userusecase) UserCreate(user *User) error {
+func (u *user) UserCreate(user *User) error {
+	if len(user.Username) < 5 || len(user.Username) > 16 {
+		return fmt.Errorf("invalid username (%s)", user.Username)
+	}
+
+	if len(user.Password) < 8 || len(user.Password) > 32 {
+		return fmt.Errorf("invalid password")
+	}
+
+	gu, _ := u.repo.Get(user.Username)
+	if gu != nil {
+		return fmt.Errorf("already user (%s)", gu.Username)
+	}
+
 	return u.repo.Create(user)
 }
 
-func (u *userusecase) UserGet(name string) (*User, error) {
+func (u *user) UserGet(name string) (*User, error) {
+	if len(name) < 5 || len(name) > 16 {
+		return nil, fmt.Errorf("invalid username (%s)", name)
+	}
 	return u.repo.Get(name)
 }
 
-func (u *userusecase) UserUpdate(user *User) error {
+func (u *user) UserUpdate(user *User) error {
+	if len(user.Username) < 5 || len(user.Username) > 16 {
+		return fmt.Errorf("invalid username (%s)", user.Username)
+	}
+
+	if len(user.Password) < 8 || len(user.Password) > 32 {
+		return fmt.Errorf("invalid password")
+	}
+
 	return u.repo.Update(user)
 }
 
-func (u *userusecase) UserDelete(name string) error {
+func (u *user) UserDelete(name string) error {
+	if len(name) < 5 || len(name) > 16 {
+		return fmt.Errorf("invalid username (%s)", name)
+	}
 	return u.repo.Delete(name)
 }
 
-func NewUseCase(repo UserRepository) UserUsecase {
-	return &userusecase{repo: repo}
+func NewUser(repo UserRepository) UserInterface {
+	return &user{repo: repo}
 }
