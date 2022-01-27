@@ -4,17 +4,10 @@ import (
 	"fmt"
 )
 
+// Domain 정의
 type User struct {
 	Username string
 	Password string
-}
-
-type user struct {
-	repo UserRepository
-}
-
-func Users() *user {
-	return &user{}
 }
 
 type UserRepository interface {
@@ -29,6 +22,11 @@ type UserInterface interface {
 	UserGet(name string) (*User, error)
 	UserUpdate(u *User) error
 	UserDelete(name string) error
+}
+
+// Usecase 구현
+type user struct {
+	repo UserRepository
 }
 
 func (u *user) UserCreate(user *User) error {
