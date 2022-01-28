@@ -12,7 +12,7 @@ Golang을 사용하면서 Example한 소스코드 모음 집이다.
 ## <a href="https://github.com/yiaw/go-example/tree/main/k8s-client/get-resource" target="_blank">3. k8s-client</a>
  Kubernetes에서 제공하는 `OpenAPI`를 통해서 `kube-apiserver`와 통신하여 원하는 값을 얻을 수는 있다. <br>
  REST API를 직접 사용하려면 까다로운 절차가 필요하다. <br>
- kubernetes에서 제공해주는 Client PKG인 `client-go`를 이용하여 `kube-apiserver`와 통신 하는 방버에 대해서 알아 본다.
+ kubernetes에서 제공해주는 Client PKG인 `client-go`를 이용하여 `kube-apiserver`와 통신 하는 방법에 대해서 알아 본다.
 
 ## <a href="https://github.com/yiaw/go-example/tree/main/k8s-some" target="_blank">4. k8s-some</a>
  `kubernetes-dashboard`, `okd`, `octant`, `data-dog`등 kubernetes 진영에서 사용되는 `Monitoring Solution` 에서는 직접 Container에 접속할 수 있는 화면을 제공 한다. <br>
