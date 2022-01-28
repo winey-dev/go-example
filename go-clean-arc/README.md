@@ -1,6 +1,6 @@
 
 # Contents
-\{:toc}
+{:toc}
 
 # ✔ Learning Objectives
 - [x] User CRUD를 지원하는 서비스를 구현   
