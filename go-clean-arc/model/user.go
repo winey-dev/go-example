@@ -10,6 +10,7 @@ type User struct {
 	Password string
 }
 
+//go:generate mokery --name UserRepository --case undersocre --inpakcage
 type UserRepository interface {
 	Create(u *User) error
 	Get(name string) (*User, error)
@@ -40,7 +41,7 @@ func (u *user) UserCreate(user *User) error {
 
 	gu, _ := u.repo.Get(user.Username)
 	if gu != nil {
-		return fmt.Errorf("already user (%s)", gu.Username)
+		return fmt.Errorf("already user (%s)", user.Username)
 	}
 
 	return u.repo.Create(user)
