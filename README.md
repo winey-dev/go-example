@@ -19,4 +19,4 @@ Golang을 사용하면서 Example한 소스코드 모음 집이다.
  어떤 방법으로 구현되어 있는지 서버 입장에서 동작 방식을 파악해 본다.
 
 ## <a href="https://github.com/yiaw/go-example/tree/main/elastic-go" target="_blank">5. elastic-go</a>   
- `elastic-go`를 이용해서 elasticsearch와 통신하는 방법을 정리해본다. 
+ `elastic-go`를 이용해서 `elasticsearch`와 통신하는 방법을 정리해본다. 
